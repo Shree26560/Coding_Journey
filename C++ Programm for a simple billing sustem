@@ -1,0 +1,86 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+void serial(int sr[] , int size){
+  for(int i = 0 ; i < size ; i++){
+    cin>>sr[i];
+  }
+}
+
+void product_num(string pd[] , int size){
+  for(int j = 0 ; j <size; j++){
+    cin>>pd[j];
+  }
+}
+
+void quantity(int qty[] , int size){
+    for(int k = 0 ; k <size; k++){
+      cin>>qty[k];
+    }
+}
+void cost(int price[] , int size){
+  for(int l = 0 ; l <size; l++){
+    cin>>price[l];
+  }
+}
+void total(int qty[], int price[], int Total[], int size) {
+    for(int i = 0; i < size; i++) {
+        Total[i] = qty[i] * price[i]; 
+    }
+}
+
+int main(){
+  
+  cout<<"please mention the details"<<endl;
+  //customer details.....
+  string customer_name;
+  int customer_id;
+  cout<<"Customer Name: ";
+  cin>>customer_name; 
+  cout<<"Customer ID: ";
+  cin>>customer_id;
+  cout<<endl;
+  cout<<"Order Details::::"<<endl;
+  int size;
+  cin>>size;
+  //array 1 details....
+  int sr[size];
+  serial(sr, size);
+  //array 2 details....
+  string pd[size];
+  product_num(pd, size);
+  //array 3 details.....
+  int qty[size];
+  quantity(qty, size);
+  //array 4 details.....
+  int price[size];
+  cost(price, size);
+  int Total[size];
+  total(qty, price, Total, size);
+  cout<<endl;
+  cout<<"+-----------------------------------------------------+"<<endl<<endl;
+  cout<<"             Shreedhar's Grocerry :)           "<<endl<<endl;
+  cout<<"Customer Name: "<<customer_name<<endl;
+  cout<<"Customer Id: "<<customer_id<<endl<<endl;
+  
+  
+  cout << setw(10) << left << "S-no" 
+     << setw(15) << left << "Product" 
+     << setw(10) << left << "Quantity" 
+     << setw(10) << left << "Price" 
+     <<setw(10)<<left<<"Total"
+     << endl;
+
+  // Data output with alignment
+  for(int i = 0 ; i < size ; i++){ 
+  cout << setw(10) << left << sr[i] 
+       << setw(15) << left << pd[i] 
+       << setw(10) << left << qty[i] 
+       << setw(10) << left << price[i] 
+       <<setw(10)<<left<<Total[i]
+       << endl;
+  }
+  
+}
+
