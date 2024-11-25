@@ -1,0 +1,61 @@
+//Stack Master Code
+
+#include<iostream>
+using namespace std;
+
+int top = -1;
+
+void push(int stk[], int n, int item){
+    if(top == n-1){
+        cout<<"Stack Overflow!";
+    }
+    else{
+        top+=1;
+        stk[top] = item;
+    }
+}
+
+void display(int stk[]){
+    if(top == -1){
+        cout<<"Empty Stack!";
+    }
+    else{
+        for(int i = 0 ; i <= top ; i++){
+            cout<<stk[i]<<" ";
+        }
+    }
+}
+
+void pop(int stk[],int n){
+    if(top == -1){
+        cout<<"Stack Empty!";
+        return ;
+    }
+    else{
+        int item = stk[top];
+        top--;
+        return ;
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    int stk[n];
+    int item;
+    for(int i = 0 ; i < n ; i++){
+        cin>>item;
+        push(stk,n,item);
+    }
+    cout<<"The Elements are: ";
+    display(stk);
+    cout<<endl;
+    
+    pop(stk,n);
+    cout<<"Stack after POP: ";
+    display(stk);
+    cout<<endl;
+    
+    cout<<"Peak Element is: ";
+    cout<<stk[top];
+}
