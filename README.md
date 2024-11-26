@@ -7,7 +7,7 @@
 
 - 🌱 I’m currently learning **C++ , DSA in C++**
 
-- 💬 Ask me about **Pytgon**
+- 💬 Ask me about **Python**
 
 - 📫 How to reach me **shreedhart182005@gmail.com**
 
